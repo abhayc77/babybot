@@ -16,16 +16,17 @@ import AppService from './app.service';
     }),
     MongooseModule.forRoot(process.env.MONGODB_URL as string, {
       // automatically try to reconnect when it loses connection
-      autoReconnect: true,
-      useCreateIndex: true,
+      // autoReconnect: true,
+      //dbName: 'babybot',
+      //useCreateIndex: true,
       // reconnect every reconnectInterval milliseconds
       // for reconnectTries times
-      reconnectTries: Number.MAX_VALUE,
-      reconnectInterval: 1000,
+      // reconnectTries: Number.MAX_VALUE,
+      // reconnectInterval: 1000,
       // flag to allow users to fall back to the old
       // parser if they find a bug in the new parse
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     }),
     MailerModule.forRoot({
       transport: {
