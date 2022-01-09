@@ -6,7 +6,9 @@ export interface ValidateUserOutput {
 
   readonly email?: string;
 
-  readonly verified: boolean;
+  readonly flag_mobile_verified: boolean;
+
+  readonly flag_email_verified: boolean;
 
   readonly role?: RolesEnum;
 }
