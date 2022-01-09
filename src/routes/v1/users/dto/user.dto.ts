@@ -5,6 +5,7 @@ import {
   IsEmail,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { RolesEnum } from '@decorators/roles.decorator';
 
 export default class UserDto {
   @ApiProperty({
@@ -23,4 +24,6 @@ export default class UserDto {
   @IsString()
   @MinLength(1)
   readonly password: string = '';
+
+  role : RolesEnum = RolesEnum.parent
 }

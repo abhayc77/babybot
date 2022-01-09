@@ -6,16 +6,17 @@ import { Injectable } from '@nestjs/common';
 import { User } from '@v1/users/schemas/users.schema';
 import UsersRepository from '@v1/users/users.repository';
 import UserDto from './dto/user.dto';
+import { RolesEnum } from '@decorators/roles.decorator';
 
 @Injectable()
 export default class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  async create(userDto: UserDto): Promise<User> {
+  async createParent(userDto: UserDto): Promise<User> {
     const hashedPassword: string = await bcrypt.hash(userDto.password, 10);
 
     return this.usersRepository.create({
-      ...userDto,
+      ...userDto,      
       password: hashedPassword,
     });
   }

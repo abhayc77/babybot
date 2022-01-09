@@ -28,9 +28,10 @@ export default class AuthService {
     if (passwordCompared) {
       return {
         _id: user._id,
-        email: user.email,
-        role: user.role,
-        verified: user.verified,
+        email: user.email,        
+        flag_email_verified: user.flag_email_verified,
+        flag_mobile_verified: user.flag_mobile_verified,
+        role: user.role
       };
     }
 

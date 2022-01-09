@@ -33,6 +33,7 @@ import UsersEntity from '@v1/users/entity/user.entity';
 import LocalAuthGuard from './guards/local-auth.guard';
 import AuthService from './auth.service';
 import SignUpDto from './dto/sign-up.dto';
+import { RolesEnum } from '@decorators/roles.decorator';
 
 @ApiTags('Auth')
 @Controller()
@@ -66,7 +67,7 @@ export default class AuthController {
   @Post('/register')
   @Redirect('/v1/auth/login')
   public async create(@Body() params: SignUpDto): Promise<void> {
-    const { email, _id } = await this.usersService.create(params) as UsersEntity;
+    const { email, _id } = await this.usersService.createParent({...params, role: RolesEnum.parent}) as UsersEntity;
     const token = await this.authService.createVerifyToken(_id);
 
     await this.mailerService.sendMail({
