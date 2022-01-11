@@ -79,7 +79,7 @@ created_by : String = '';
 updated_by : String = '';
 
 
-/*
+/* 
 @ApiProperty({ type : Date }) 
 createdAt : Date;
 
