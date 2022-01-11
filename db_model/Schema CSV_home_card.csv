@@ -1,0 +1,17 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+section_name,String,,,,,0
+section_title,String,,,,,0
+section_sub_title,String,,,,,0
+section_desc,String,,,,,0
+section_bg_color,String,,,,,0
+section_font_color,String,,,,,0
+section_bg_image,String,,,,,0
+action_text,String,,,,,0
+action_sub_text,String,,,,,0
+action_url,String,,,,,0
+action_bg_color,String,,,,,0
+action_navi_type,String,,,,,0
+action_navi_key,String,,,,,0
+action_navi_params,Mixed,,,,,0
+deleted,Boolean,,0,,,0
+rowcode,String,,,,,0

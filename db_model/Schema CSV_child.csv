@@ -1,0 +1,12 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+user_id,ObjectId,user,,,,0
+parent_id,ObjectId,parent,,,,0
+child_name,String,,,,,0
+child_dob,Date,,,,,0
+child_gender,String,,,"['M', 'F', 'O']",,0
+current_weight,Number,,,,,0
+current_height,Number,,,,,0
+avatar_name,String,,,,,0
+avatar_url,String,,,,,0
+flag_display_avatar,Boolean,,,,,0
+child_image_url,String,,,,,0

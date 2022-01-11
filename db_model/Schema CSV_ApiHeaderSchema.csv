@@ -1,0 +1,3 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+Key,String,,,,,0
+Value,String,,,,,0

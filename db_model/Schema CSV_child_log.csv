@@ -1,0 +1,9 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+height,Number,,,,,0
+weight,Number,,,,,0
+neck_circ,Number,,,,,0
+inserted_on,Date,,Date.now,,,0
+updated_on,Date,,Date.now,,,0
+child_id,ObjectId,child,,,,0
+user_id,ObjectId,user,,,,0
+flag_deleted,Boolean,,0,,,0

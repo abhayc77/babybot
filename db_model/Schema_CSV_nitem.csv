@@ -1,0 +1,18 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+node_id,ObjectId,node,,,,0
+node_name,String,,,,,0
+nitem_type,String,,"enum: ['button', 'card']",,,0
+nitem_sequence,Number,,,,,0
+nitem_name,String,,,,,0
+nitem_value,String,,,,,0
+nitem_text,String,,,,,0
+nitem_notice_text,String,,,,,0
+flat_color,String,,,,,0
+image_url,String,,,,,0
+overlay_text,String,,,,,0
+overlay_color,String,,,,,0
+nitem_title,String,,,,,0
+next_node_name,String,,,,,0
+deleted,Boolean,,0,,,0
+rowcode,String,,,,,0
+timestamp,Date,,Date.now,,,0

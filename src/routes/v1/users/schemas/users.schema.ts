@@ -10,7 +10,7 @@ export class User {
   @Prop({required : true, unique:true, type : String }) 
   mobile_number : String = '';
 
-  @Prop({required : true,  type : String }) 
+  @Prop({required : false,  type : String }) 
   alt_mobile : String = '';
 
   @Prop({required : true,  type : String }) 
@@ -19,7 +19,7 @@ export class User {
   @Prop({required : true,  type : String }) 
   last_name : String = '';
 
-  @Prop({required : true,  type : String }) 
+  @Prop({required : false,  type : String }) 
   email : String = '';
 
   @Prop({required : true,  type : String }) 
@@ -31,19 +31,19 @@ export class User {
   @Prop({required : false,  type : String }) 
   oAuthkey : String = '';
 
-  @Prop({required : true,  type : Date }) 
+  @Prop({required : false,  type : Date }) 
   registration_date : Date = new Date();
 
-  @Prop({required : true,  type : String }) 
+  @Prop({required : false,  type : String }) 
   mobile_verification_otp : String = '';
 
-  @Prop({required : true,  type : Boolean }) 
+  @Prop({required : false,  type : Boolean }) 
   flag_mobile_verified : Boolean = false;
 
-  @Prop({required : true,  type : Boolean }) 
+  @Prop({required : false,  type : Boolean }) 
   flag_email_verified : Boolean = false;
 
-  @Prop({required : true,  type : String, default:StatusEnum.reg_in_progress }) 
+  @Prop({required : false,  type : String, default:StatusEnum.reg_in_progress }) 
   status : StatusEnum = StatusEnum.reg_in_progress;
 
   @Prop({required : false,  type : String }) 
@@ -70,11 +70,11 @@ export class User {
   @Prop({required : true,  type : String, default:RolesEnum.parent }) 
   role : RolesEnum = RolesEnum.parent;
 
-  @Prop({required : true,  type : String, default:RolesEnum.parent }) 
-  created_by : RolesEnum = RolesEnum.parent;
+  @Prop({required : true,  type : String }) 
+  created_by : String = '';
 
-  @Prop({required : true,  type : String, default:RolesEnum.parent }) 
-  updated_by : RolesEnum = RolesEnum.parent;
+  @Prop({required : true,  type : String }) 
+  updated_by : String = '';
 
   /** 
   @Prop({

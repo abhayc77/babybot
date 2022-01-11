@@ -1,0 +1,11 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+jwt_token_string,String,,,,,0
+session_id,ObjectId,session_history,,,,0
+app_platform,String,,,,,0
+app_version,String,,,,,0
+platform_version,String,,,,,0
+device_type,String,,,,,0
+created_on,Date,,Date.now,,,0
+expiry_on,Date,,,,,0
+device_id,String,,,,,0
+notification_token,String,,,,,0

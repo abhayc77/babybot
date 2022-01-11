@@ -1,0 +1,40 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+node_name,String,,,,,0
+node_view_code,String,,Constants.DEFAULT_VIEW_CODE,,,0
+node_title,String,,,,,0
+node_content,String,,,,,0
+flag_html,Boolean,,,,,0
+helper_text,String,,,,,0
+notice_text,String,,,,,0
+topic_id,ObjectId,topic,,,,0
+topic_name,String,,,,,0
+emote_id,ObjectId,emote,,,,0
+emote_name,String,,,,,0
+input_type,String,,,"enum: ['text', 'media', 'nitem_btn', 'nitem_card']",,0
+pre_image_url,String,,,,,0
+post_image_url,String,,,,,0
+flag_video,Boolean,,,,,0
+video_thumbnail_url,String,,,,,0
+video_url,String,,,,,0
+nitem_list,ObjectId,nitem,,,,1
+nitem_type,String,,,"enum: ['button', 'card']",,0
+flag_multi_select,Boolean,,,,,0
+flag_nitem_src_api,Boolean,,,,,0
+nitem_source_api,ApiSchema,,,,,0
+slider_title,String,,,,,0
+slider_info,String,,,,,0
+slider_min,Number,,,,,0
+slider_max,Number,,,,,0
+slider_uom,String,,,,,0
+slider_icon_url,String,,,,,0
+flag_resp_api,Boolean,,,,,0
+flag_resp_text_as_html,Boolean,,,,,0
+resp_api,ApiSchema,,,,,0
+resp_text_format,String,,,,,0
+navigation_type,String,,,"enum: ['fixed', 'button', 'api', 'pattern']",,0
+fixed_next_node_name,String,,,,,0
+navi_api,ApiSchema,,,,,0
+navi_api_ref_nodes,NodeRefsSchema,,,,,1
+deleted,Boolean,,0,,,0
+rowcode,String,,,,,0
+timestamp,Date,,Date.now,,,0

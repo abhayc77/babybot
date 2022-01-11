@@ -1,0 +1,7 @@
+"field_name","cd_type","cd_ref","cd_default","cd_enum","cd_index","flag_array"
+"user_id","ObjectId","user","","","",""
+"mobile_number","String","","","","",""
+"otp","String","","","","",""
+"flag_verified","Boolean","","","","",""
+"request_timestamp","Date","","Date.now","","",""
+"send_api_log","String","","","","",""

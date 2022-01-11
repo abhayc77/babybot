@@ -1,0 +1,9 @@
+field_name,cd_type,cd_ref,cd_default,cd_enum,cd_index,flag_array
+node_name,String,,,,,0
+api_url,String,,,,,0
+api_method,String,,,,,0
+api_headers,ApiHeaderSchema,,,,,1
+request_data,String,,,,,0
+deleted,Boolean,,,,,0
+rowcode,String,,,,,0
+timestamp,Date,,,,,0
