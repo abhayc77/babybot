@@ -14,12 +14,7 @@ export default class UsersRepository {
   ) {}
 
   public create(user: UserDto): Promise<User> {
-    return this.userModel.create({
-      ...user,      
-      flag_email_verified: false,
-      flag_mobile_verified: false,
-      role : user.role
-    });
+    return this.userModel.create(user);
   }
 
   public async getByEmail(email: string): Promise<User | null> {

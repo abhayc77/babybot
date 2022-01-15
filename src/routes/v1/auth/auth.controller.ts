@@ -30,10 +30,10 @@ import SignInDto from '@v1/auth/dto/sign-in.dto';
 import IsNotLoggedGuard from '@guards/is-not-logged.guard';
 import RedirectIfLoggedGuard from '@guards/redirect-if-logged.guard';
 import UsersEntity from '@v1/users/entity/user.entity';
+import { RolesEnum } from '@decorators/roles.decorator';
 import LocalAuthGuard from './guards/local-auth.guard';
 import AuthService from './auth.service';
 import SignUpDto from './dto/sign-up.dto';
-import { RolesEnum } from '@decorators/roles.decorator';
 
 @ApiTags('Auth')
 @Controller()
@@ -64,10 +64,11 @@ export default class AuthController {
 
   @ApiMovedPermanentlyResponse({ description: 'Redirects to home' })
   @ApiInternalServerErrorResponse({ description: 'Returns the 500 error' })
+  @ApiBody({ type: SignUpDto })
   @Post('/register')
   @Redirect('/v1/auth/login')
   public async create(@Body() params: SignUpDto): Promise<void> {
-    const { email, _id } = await this.usersService.createParent({...params, role: RolesEnum.parent}) as UsersEntity;
+    const { email, _id } = await this.usersService.createParent({ ...params, role: RolesEnum.parent }) as UsersEntity;
     const token = await this.authService.createVerifyToken(_id);
 
     await this.mailerService.sendMail({
