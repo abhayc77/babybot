@@ -72,7 +72,7 @@ export default class AuthController {
   @Post('/registerUser')
   @Redirect('/v1/auth/login')
   public async createUser(@Body() params: SignUpDto): Promise<void> {
-    const { email, _id } = await this.usersService.createParent({ ...params, role: RolesEnum.parent }) as UsersEntity;
+    const { email, _id } = await this.usersService.createUser({ ...params, role: RolesEnum.parent , mobile: ''}) as UsersEntity;
     const token = await this.authService.createVerifyToken(_id);
 
     await this.mailerService.sendMail({

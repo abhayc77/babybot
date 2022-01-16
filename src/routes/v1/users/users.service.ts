@@ -12,7 +12,7 @@ import { RolesEnum } from '@decorators/roles.decorator';
 export default class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  async createParent(userDto: UserDto): Promise<User> {
+  async createUser(userDto: UserDto): Promise<User> {
     const hashedPassword: string = await bcrypt.hash(userDto.password, 10);
 
     return this.usersRepository.create({
