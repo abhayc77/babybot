@@ -2,7 +2,7 @@ import {
   IsNotEmpty,
   MinLength,
   IsString,
-  IsEmail,
+  IsEmail, IsMobilePhone, IsEnum,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { RolesEnum } from '@decorators/roles.decorator';
@@ -23,7 +23,24 @@ export default class UserDto {
   @IsNotEmpty()
   @IsString()
   @MinLength(1)
+  @IsMobilePhone()
+  readonly mobile: string = '';
+
+  @ApiProperty({
+    type: String,
+  })
+  @IsNotEmpty()
+  @IsString()
+  @MinLength(1)
   readonly password: string = '';
 
-  role : RolesEnum = RolesEnum.parent
+  @ApiProperty({
+    type: String,
+    enum: RolesEnum,
+    default: RolesEnum.parent,
+  })
+  @IsNotEmpty()
+  @IsString()
+  @IsEnum(RolesEnum)
+  role : RolesEnum = RolesEnum.parent;
 }

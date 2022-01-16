@@ -1,7 +1,7 @@
 import { GenderEnum } from '../../../enum/gender';
 import { ParentTypeEnum } from '../../../enum/parentType';
 
-export class CreateParentDto {
+export class CreateParentDto_not_in_use {
   gender : GenderEnum = GenderEnum.NotAvailable;
   parent_type : ParentTypeEnum = ParentTypeEnum.NotSet;
   age : Number = 0;

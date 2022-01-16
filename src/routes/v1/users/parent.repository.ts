@@ -10,7 +10,7 @@ import { IUpdateParent } from './interfaces/update-parent-fields';
 
 
 @Injectable()
-export default class ParentsRepository_NotInUse {
+export default class ParentsRepository {
   constructor(
     @InjectModel(Parent.name) private ParentModel: Model<ParentDocument>,
   ) {}
@@ -42,7 +42,7 @@ export default class ParentsRepository_NotInUse {
   public async getVerifiedParentByEmail(email: string): Promise<Parent | null> {
     const foundParent: Parent | null = await this.ParentModel.findOne({
       email,
-      verified: true,
+      flag_mobile_verified: true,
     });
 
     return foundParent || null;
@@ -51,7 +51,7 @@ export default class ParentsRepository_NotInUse {
   public async getVerifiedParentById(id: Types.ObjectId): Promise<Parent | null> {
     const foundParent: Parent | null = await this.ParentModel.findOne({
       _id: id,
-      verified: true,
+      flag_mobile_verified: true,
     });
 
     return foundParent || null;

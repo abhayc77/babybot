@@ -1,26 +1,31 @@
 import { Schema, SchemaFactory, Prop } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { User } from '@v1/users/schemas/users.schema';
+import { User, UserSchema } from '@v1/users/schemas/users.schema';
 
 import { GenderEnum } from '../../../enum/gender';
 import { ParentTypeEnum } from '../../../enum/parentType';
+import { RolesEnum } from '@decorators/roles.decorator';
 
 @Schema()
-export class Parent_not_In_use {
+export class ParentSchema extends UserSchema{
 
-  @Prop({ type: User })
-  user: User;
+  @Prop({
+    type: String,
+    required: true,
+    default: RolesEnum.parent,
+  })
+  role : RolesEnum.parent;
 
   @Prop({
     required: false,
     type: String,
-    default: GenderEnum.NotAvailable
+    default: GenderEnum.NotAvailable,
   })
   gender: GenderEnum = GenderEnum.NotAvailable;
 
   @Prop({
     required: false,
-    type: Boolean
+    type: Boolean,
   })
   first_child: Boolean = true;
 
@@ -33,10 +38,9 @@ export class Parent_not_In_use {
 
   @Prop({
     required: false,
-    type: Number
+    type: Number,
   })
   age: Number = 0;
-
 }
 
 export type ParentDocument = Parent & Document;

@@ -65,7 +65,29 @@ export default class AuthController {
   @ApiMovedPermanentlyResponse({ description: 'Redirects to home' })
   @ApiInternalServerErrorResponse({ description: 'Returns the 500 error' })
   @ApiBody({ type: SignUpDto })
-  @Post('/register')
+  @Post('/registerUser')
+  @Redirect('/v1/auth/login')
+  public async createUser(@Body() params: SignUpDto): Promise<void> {
+    const { email, _id } = await this.usersService.createParent({ ...params, role: RolesEnum.parent }) as UsersEntity;
+    const token = await this.authService.createVerifyToken(_id);
+
+    await this.mailerService.sendMail({
+      to: email,
+      from: process.env.MAILER_FROM_EMAIL,
+      subject: 'Email Verification',
+      template: `${process.cwd()}/public/views/mailer/templates/verify-password`,
+      context: {
+        token,
+        email,
+        host: process.env.SERVER_HOST,
+      },
+    });
+  }
+
+  @ApiMovedPermanentlyResponse({ description: 'Redirects to home' })
+  @ApiInternalServerErrorResponse({ description: 'Returns the 500 error' })
+  @ApiBody({ type: SignUpDto })
+  @Post('/registerParent')
   @Redirect('/v1/auth/login')
   public async create(@Body() params: SignUpDto): Promise<void> {
     const { email, _id } = await this.usersService.createParent({ ...params, role: RolesEnum.parent }) as UsersEntity;

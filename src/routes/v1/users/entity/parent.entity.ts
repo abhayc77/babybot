@@ -1,21 +1,16 @@
-import { Types } from 'mongoose';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { GenderEnum } from '../../../enum/gender';
 import { User } from '@v1/users/schemas/users.schema';
 import { ParentTypeEnum } from '../../../enum/parentType';
+import { StatusEnum } from '../../../enum/status';
+import { RolesEnum } from '@decorators/roles.decorator';
 
-export class Parent_Not_In_Use {
-  @ApiProperty({ type: String })
-  _id: Types.ObjectId = new Types.ObjectId();
-
-  @ApiProperty({ type: User })
-  user: User;
-
+export class Parent extends User {
   @ApiProperty({
     type: 'enum',
     enum: GenderEnum
   })
-  gender: GenderEnum = GenderEnum.Male;
+  gender: GenderEnum = GenderEnum.NotAvailable;
 
   @ApiProperty({ type: Boolean })
   first_child: Boolean = true;
