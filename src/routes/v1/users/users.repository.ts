@@ -2,9 +2,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Types, Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import UserDto from '@v1/users/dto/user.dto';
-import { RolesEnum } from '@decorators/roles.decorator';
-import { UserDocument } from '@v1/users/schemas/users.schema';
-import { User } from './schemas/users.schema';
+import { User, UserDocument } from './schemas/users.schema';
 import { IUpdateUser } from './interfaces/update-user-fields';
 
 @Injectable()

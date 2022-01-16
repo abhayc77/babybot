@@ -34,6 +34,9 @@ import { RolesEnum } from '@decorators/roles.decorator';
 import LocalAuthGuard from './guards/local-auth.guard';
 import AuthService from './auth.service';
 import SignUpDto from './dto/sign-up.dto';
+import ParentsService from '@v1/users/parents.service';
+import { CreateParentDto } from '@v1/users/dto/create-parent.dto';
+import ParentEntity from '@v1/users/entity/parent.entity';
 
 @ApiTags('Auth')
 @Controller()
@@ -41,6 +44,7 @@ export default class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly usersService: UsersService,
+    private readonly parentService : ParentsService,
     private readonly mailerService: MailerService,
   ) {}
 
@@ -86,11 +90,11 @@ export default class AuthController {
 
   @ApiMovedPermanentlyResponse({ description: 'Redirects to home' })
   @ApiInternalServerErrorResponse({ description: 'Returns the 500 error' })
-  @ApiBody({ type: SignUpDto })
+  @ApiBody({ type: CreateParentDto })
   @Post('/registerParent')
   @Redirect('/v1/auth/login')
-  public async create(@Body() params: SignUpDto): Promise<void> {
-    const { email, _id } = await this.usersService.createParent({ ...params, role: RolesEnum.parent }) as UsersEntity;
+  public async createParent(@Body() params: CreateParentDto): Promise<void> {
+    const { email, _id } = await this.parentService.createParent({ ...params }) as ParentEntity;
     const token = await this.authService.createVerifyToken(_id);
 
     await this.mailerService.sendMail({

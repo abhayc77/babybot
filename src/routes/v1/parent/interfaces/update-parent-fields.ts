@@ -1,5 +1,5 @@
-import { ObjectId } from 'mongodb';
-
-export interface IUpdateParent {
-  readonly [key: string]: string | boolean | number | ObjectId;
-}
+// import { ObjectId } from 'mongodb';
+//
+// export interface IUpdateParent {
+//   readonly [key: string]: string | boolean | number | ObjectId;
+// }

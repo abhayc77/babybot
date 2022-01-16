@@ -3,5 +3,6 @@ export enum ParentTypeEnum {
   Father = 'Father',
   GrandMother = 'GrandMother',
   GrandFather = 'GrandFather',
+  Relative = 'Relative',
   NotSet = 'Not Set'
 }

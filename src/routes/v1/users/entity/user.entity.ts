@@ -45,7 +45,6 @@ flag_mobile_verified: boolean  = false;
 @ApiProperty({ type: Boolean })
 flag_email_verified: boolean  = false;
 
-
 @ApiProperty({ type: 'enum', enum: StatusEnum })
 status: StatusEnum = StatusEnum.reg_in_progress
 
