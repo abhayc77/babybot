@@ -22,7 +22,7 @@ export class User {
   @Prop({required: false, type: String })
   email: String = '';
 
-  @Prop({required: true, type: String })
+  @Prop({required: false, type: String })
   user_pin: String = '';
 
   @Prop({required: true, type: String })

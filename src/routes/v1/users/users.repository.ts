@@ -12,7 +12,7 @@ export default class UsersRepository {
   ) {}
 
   public create(user: UserDto): Promise<User> {
-    return this.userModel.create(user);
+    return this.userModel.create({...user, created_by:"self_reg",updated_by:'self_reg'});
   }
 
   public async getByEmail(email: string): Promise<User | null> {

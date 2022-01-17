@@ -23,7 +23,7 @@ export class Parent {
   @Prop({required: false, type: String })
   email: string = '';
 
-  @Prop({required: true, type: String })
+  @Prop({required: false, type: String })
   user_pin: String = '';
 
   @Prop({required: true, type: String })
@@ -83,7 +83,7 @@ export class Parent {
   @Prop({required: false, type: String, default: ParentTypeEnum.NotSet })
   parent_type: ParentTypeEnum = ParentTypeEnum.NotSet;
 
-  @Prop({required: true, type: Number })
+  @Prop({required: false, type: Number })
   age: Number = 0;
 
   @Prop({ type: Number })

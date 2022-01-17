@@ -17,6 +17,14 @@ export default class UserDto {
   @IsEmail()
   readonly email: string = '';
 
+  @ApiProperty({ type: String, example: 'Neeta' })
+  @IsNotEmpty()
+  readonly first_name: string = '';
+
+  @ApiProperty({ type: String, example: 'Kumar' })
+  @IsNotEmpty()
+  readonly last_name: string = '';
+
   @ApiProperty({
     type: String,
   })
@@ -24,7 +32,7 @@ export default class UserDto {
   @IsString()
   @MinLength(1)
   @IsMobilePhone()
-  readonly mobile: string = '';
+  readonly mobile_number: string = '';
 
   @ApiProperty({
     type: String,
